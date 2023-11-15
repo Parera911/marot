@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 
-  $("[letters-slide-up-title]").each(function (index) {
+  $("[letters-slide-up]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
     tl.from($(this).find(".char"), { yPercent: 100, duration: 0.4, ease: "power1.out", stagger: { amount: 0.6 } });
     createScrollTrigger($(this), tl);
