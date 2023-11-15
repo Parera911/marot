@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   $("[letters-slide-up-title]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
 
-    let delayAmount = 1 * index;
+    let delayAmount = 10 * index;
     tl.from($(this).find(".char"), { yPercent: 100, duration: 0.4, ease: "power1.out", stagger: { amount: 0.6, start: delayAmount } });
 
     createScrollTrigger($(this), tl);
