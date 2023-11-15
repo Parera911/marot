@@ -24,12 +24,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 
-  $("[letters-slide-up]").each(function (index) {
-    let tl = gsap.timeline({ paused: true });
-    tl.from($(this).find(".char"), { yPercent: 100, duration: 0.4, ease: "power1.out", stagger: { amount: 0.6 } });
-    createScrollTrigger($(this), tl);
-  });
-  
+$("[letters-slide-up]").each(function (index) {
+  let tl = gsap.timeline({ paused: true });
+
+  // Gebruik de delay-functie om een vertraging van 1 seconde toe te voegen
+  tl.from($(this).find(".char"), { yPercent: 100, duration: 0.4, ease: "power1.out", stagger: { amount: 0.6 } })
+    .delay(index * 1); // 1 seconde vertraging per element
+
+  createScrollTrigger($(this), tl);
+});
 
   $("[letters-slide-up-title]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
