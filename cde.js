@@ -28,16 +28,14 @@ $("[letters-slide-up]").each(function (index) {
   let tl = gsap.timeline({ paused: true });
 
   // Gebruik de delay-functie om een vertraging van 1 seconde toe te voegen
-  tl.from($(this).find(".char"), { yPercent: 100, delay: 2, duration: 0.4, ease: "power1.out", stagger: { amount: 0.6 } }).delay(5); // 1 seconde vertraging per element
+  tl.from($(this).find(".char"), { yPercent: 100, delay: 2, duration: 0.4, ease: "power1.out", stagger: { amount: 0.6 } }).delay(2); // 1 seconde vertraging per element
 
   createScrollTrigger($(this), tl);
 });
 
   $("[letters-slide-up-title]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
-
-    let delayAmount = 10 * index;
-    tl.from($(this).find(".char"), { yPercent: 100, duration: 0.4, ease: "power1.out", stagger: { amount: 0.6, start: delayAmount } });
+    tl.from($(this).find(".char"), { yPercent: 100, duration: 0.4, ease: "power1.out", stagger: { amount: 0.6, } });
 
     createScrollTrigger($(this), tl);
   });
