@@ -28,14 +28,14 @@ $("[letters-slide-up]").each(function (index) {
   let tl = gsap.timeline({ paused: true });
 
   // Gebruik de delay-functie om een vertraging van 1 seconde toe te voegen
-  tl.from($(this).find(".char"), { yPercent: 100, delay: 0, duration: 0.4, ease: "power1.out", stagger: { amount: 0.6 } }); // 1 seconde vertraging per element
+  tl.from($(this).find(".char"), { yPercent: 100, delay: 0.1, duration: 0.4, ease: "power1.out", stagger: { amount: 0.6 } }); // 1 seconde vertraging per element
 
   createScrollTrigger($(this), tl);
 });
 
   $("[letters-slide-up-title]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
-    tl.from($(this).find(".char"), { yPercent: 100, duration: 0.1, ease: "power1.out", stagger: { amount: 0.6, } });
+    tl.from($(this).find(".char"), { yPercent: 100, duration: 0.4, ease: "power1.out", stagger: { amount: 0.6, } });
 
     createScrollTrigger($(this), tl);
   });
@@ -54,7 +54,7 @@ $("[letters-slide-up]").each(function (index) {
         scrub: true
       }
     });
-    tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
+    tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.4, ease: "power1.out", stagger: { each: 0.4 } });
   });
 
   // Avoid flash of unstyled content
